@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAKSHMIKANTHREDDY College</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fc;
+    color: #222;
+}
+
+/* Header */
+header {
+    background: #102b55;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* Home */
+.hero {
+    min-height: 550px;
+    background: linear-gradient(
+        rgba(8, 30, 65, 0.8),
+        rgba(8, 30, 65, 0.8)
+    ), url("https://images.unsplash.com/photo-1562774053-701939374585?w=1600");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #ffc107;
+    color: #102b55;
+    padding: 13px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* Common sections */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #102b55;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* About */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 260px;
+    line-height: 1.8;
+}
+
+.about-text h2 {
+    color: #102b55;
+    margin-bottom: 18px;
+}
+
+/* Courses */
+.courses {
+    background: #eaf0f8;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.course-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+}
+
+.course-card h3 {
+    color: #102b55;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    line-height: 1.6;
+}
+
+/* Facilities */
+.facilities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.facility {
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.facility h3 {
+    color: #102b55;
+    margin-bottom: 12px;
+}
+
+.facility span {
+    font-size: 35px;
+}
+
+/* Admission */
+.admission {
+    text-align: center;
+    background: #102b55;
+    color: white;
+}
+
+.admission h2 {
+    margin-bottom: 20px;
+}
+
+.admission p {
+    margin-bottom: 25px;
+}
+
+/* Contact */
+.contact-container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border-color: #102b55;
+}
+
+.contact-container button {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background: #081c38;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 2;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #102b55;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 12px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">LAKSHMIKANTHREDDY</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#courses" onclick="closeMenu()">Courses</a>
+        <a href="#facilities" onclick="closeMenu()">Facilities</a>
+        <a href="#admission" onclick="closeMenu()">Admissions</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+</header>
+
+<!-- Home -->
+<div class="hero" id="home">
+    <div>
+        <h1>Welcome to LAKSHMIKANTHREDDY</h1>
+        <p>Education is the key to success. Build your bright future with us.</p>
+        <a href="#admission" class="btn">Apply Now</a>
+    </div>
+</div>
+
+<!-- About -->
+<section id="about">
+    <h2 class="section-title">About Our College</h2>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=900"
+             alt="College campus">
+
+        <div class="about-text">
+            <h2>Welcome to Our Institution</h2>
+
+            <p>
+                LAKSHMIKANTHREDDY is a college website designed to
+                represent an institution dedicated to education,
+                knowledge, innovation and student development.
+            </p>
+
+            <p>
+                Our aim is to provide quality education, develop
+                practical skills and prepare students for successful
+                careers.
+            </p>
+
+            <p>
+                We believe in discipline, hard work, creativity
+                and excellence.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Courses -->
+<section class="courses" id="courses">
+    <h2 class="section-title">Our Courses</h2>
+
+    <div class="course-container">
+
+        <div class="course-card">
+            <h3>B.Tech</h3>
+            <p>Engineering and Technology programs for future innovators.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>MBA</h3>
+            <p>Business management and leadership development.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>B.Sc</h3>
+            <p>Science education and research opportunities.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>B.Com</h3>
+            <p>Commerce, accounting and financial education.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>BCA</h3>
+            <p>Computer applications and software development.</p>
+        </div>
+
+        <div class="course-card">
+            <h3>MCA</h3>
+            <p>Advanced computer applications and IT skills.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Facilities -->
+<section id="facilities">
+    <h2 class="section-title">Our Facilities</h2>
+
+    <div class="facilities">
+
+        <div class="facility">
+            <span>📚</span>
+            <h3>Library</h3>
+            <p>Books and learning resources.</p>
+        </div>
+
+        <div class="facility">
+            <span>💻</span>
+            <h3>Computer Lab</h3>
+            <p>Modern computer learning environment.</p>
+        </div>
+
+        <div class="facility">
+            <span>🏏</span>
+            <h3>Sports</h3>
+            <p>Sports and physical activities.</p>
+        </div>
+
+        <div class="facility">
+            <span>🚌</span>
+            <h3>Transport</h3>
+            <p>Student transportation facilities.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Admission -->
+<section class="admission" id="admission">
+    <h2>Admissions Open!</h2>
+
+    <p>
+        Start your educational journey with LAKSHMIKANTHREDDY.
+        Take the first step towards a successful future.
+    </p>
+
+    <a href="#contact" class="btn">Enquire Now</a>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-container">
+
+        <form id="contactForm">
+
+            <input type="text" id="name"
+                   placeholder="Enter Your Name" required>
+
+            <input type="email" id="email"
+                   placeholder="Enter Your Email" required>
+
+            <input type="tel" id="phone"
+                   placeholder="Enter Your Phone Number" required>
+
+            <textarea id="message"
+                      rows="5"
+                      placeholder="Enter Your Message"
+                      required></textarea>
+
+            <button type="submit" class="btn">
+                Submit Message
+            </button>
+
+        </form>
+
+        <p id="response" style="text-align:center;margin-top:15px;"></p>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h3>LAKSHMIKANTHREDDY COLLEGE</h3>
+    <p>Learning Today, Leading Tomorrow</p>
+    <p>Email: info@example.com</p>
+    <p>© 2026 LAKSHMIKANTHREDDY. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Mobile Navigation
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+function closeMenu() {
+    document.getElementById("navbar").classList.remove("active");
+}
+
+// Contact Form
+document.getElementById("contactForm").addEventListener("submit",
+function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+
+    document.getElementById("response").style.color = "green";
+
+    document.getElementById("response").innerText =
+        "Thank you " + name + "! Your form has been submitted successfully.";
+
+    document.getElementById("contactForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>
